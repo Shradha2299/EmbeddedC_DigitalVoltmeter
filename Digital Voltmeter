@@ -1,0 +1,37 @@
+// PIC18F6520 Configuration Bit Settings
+
+//'C' source line config statements
+
+//CONFIG1H
+#pragma config OSC = HS      // Oscillator Selection bits (HS Oscillator)
+#pragma config OSCS = OFF    // Oscillator System Clock Switch Enable bit (Oscillator system clock switch oprion is disabled (main oscillator is source))
+
+//CONFIG2L
+#pragma config PWRT = OFF    // Power-up Timer Enable Bit (PWRT Disabled) 
+#pragma config BOR = ON      // Brown-out Reset Enable Bit (Brown-Out Reset Enabled)
+#pragma config BORV = 25     // Brown-out Reser Voltage Bits (VBOR set to 2.5V)
+
+//CONFIG2H
+#pragma config WDT = OFF     // Watchdog Timer Enable bit(WDT disabled)
+#pragma config WDTPS = 128   // Watchdog Timer Postscale Select bits(1:128)
+
+//CONFIG3L
+
+//CONFIG3H
+#pragma config CCP2MUX = ON  // CCP2 Mux bit (CCP2 input/output is multiplexed with RC1)
+
+//CONFIG4L
+#pragma config STVR = ON     // Stack Full/Underflow Reset Enable bit (Stack full/underflow will cause Reset)
+#pragma config LVP = OFF     // Low-Voltage ICSP Enable Bit (Low voltage ICSP disabled)
+
+//CONFIG5L
+#pragma config CP0 = OFF     // Code Protection bit (Block 0(000800-001FFFh) not code-protected)
+#pragma config CP1 = OFF     // Code Protection bit (Block 1(002000-003FFFh) not code-protected)
+#pragma config CP2 = OFF     // Code Protection bit (Block 2(004000-005FFFh) not code-protected)
+#pragma config CP3 = OFF     // Code Protection bit (Block 3(006000-007FFFh) not code-protected)
+
+//CONFIG5H
+#pragma config CPB = OFF     // Boot Block Code Protection bit (Boot Block(000000-0007FFh) not code-protected)
+#pragma config CPD = OFF     // Data EEPROM Code Protection bit (Data EEPROM not code-protected)
+
+//CONFIG6L
