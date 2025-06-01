@@ -92,12 +92,12 @@ void Lcd_VI() {
   Lcd_Set_Cursor(1,1);
   Lcd_Print_String(s);
 
-  sprintf(s, "VOLTAGE=%.3fA", voltage);
+  sprintf(s, "VOLTAGE=%.3fV", voltage);
   Lcd_Set_Cursor(2,1);
   Lcd_Print_String(s);
 
   __delay_ms(1000);
-)
+}
 
 void current_cal() {
   unsigned int reglow, reghigh;
@@ -112,13 +112,8 @@ void current_cal() {
 
   while(ADCON0bits.GO == 1);
 
-  __delay_us(50);
-
-  PORTC = ADRESL;
-  PORTB = ADRESH;
-
-  reglow = PORTC;
-  reghigh = PORTB;
+  reglow = ADRESL;
+  reghigh = ADRESH;
 
   voltage = ((reghigh*256)+reglow)*0.00488;
   current = voltage/R;
@@ -141,5 +136,4 @@ void main(void) {
     Lcd_VI();
   }
 }
-  }
-  
+ 
