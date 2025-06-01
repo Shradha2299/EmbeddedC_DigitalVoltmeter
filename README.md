@@ -36,7 +36,7 @@ current = voltage / R (where R = 560 Ω)
   
   d. Turn on the A/D module via ADCON0
 
-3. Configure A/D Interrupt (optional):
+2. Configure A/D Interrupt (optional):
 
   a. Clear the ADIF bit
   
@@ -44,29 +44,29 @@ current = voltage / R (where R = 560 Ω)
   
   c. Enable the global interrupt using GIE
 
-5. Wait for the required acquisition time.
+3. Wait for the required acquisition time.
 
-6. Start Conversion:
+4. Start Conversion:
 
   a. Set the GO/DONE bit in ADCON0 to begin the conversion
 
-7. Wait for Conversion to Complete:
+5. Wait for Conversion to Complete:
 
   a. Poll for the GO/DONE bit to clear, or
   
   b. Wait for the A/D interrupt
 
-9. Read the Conversion Result:
+6. Read the Conversion Result:
 
   a. Store the 10-bit result from ADRESH and ADRESL into variables 'reghigh' and 'reglow'
 
-11. Calculate Voltage and Current:
+7. Calculate Voltage and Current:
   
   a. voltage = ((reghigh × 256) + reglow) × 0.00488
   
   b. current = voltage / 560
 
-12. Repeat Steps as Needed:
+8. Repeat Steps as Needed:
   
   A minimum delay of 2× TAD is required before starting the next acquisition.
 
@@ -74,10 +74,10 @@ current = voltage / R (where R = 560 Ω)
 
 The 16×2 LCD displays the measured Current (A) and Voltage (V) in the following format:
 
-CURRENT=0.123A
+   CURRENT=0.123A
 
-VOLTAGE=5.000V
-
+   VOLTAGE=5.000V
+   
 **Project Files:**
 
 1. main.c — Source code for ADC configuration, calculation, and LCD display
