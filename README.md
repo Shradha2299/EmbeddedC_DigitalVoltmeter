@@ -5,12 +5,14 @@ DIGITAL VOLTMETER AND AMMETER USING PIC18F6520
 **Project Overview:**
 This project implements a Digital Voltmeter and Ammeter using a PIC18F6520 microcontroller and a 16×2 LCD display. The system measures the analog voltage across a resistor on a burn-in driver card and calculates the corresponding current. The measured voltage and current values are displayed on the LCD in real-time.
 
+
 **System Description:**
 The microcontroller uses its 10-bit Analog-to-Digital Converter (ADC) module to convert the analog input voltage to a corresponding digital value. This value is then processed to calculate voltage and current using the formula:
 
 voltage = ((ADRESH × 256) + ADRESL) × 0.00488
 
 current = voltage / R (where R = 560 Ω)
+
 
 **Hardware Used:**
 
@@ -23,6 +25,7 @@ current = voltage / R (where R = 560 Ω)
 -Resistor (560 Ω)
 
 -Power Supply (5V)
+
 
 **A/D Conversion Procedure:**
 
@@ -70,6 +73,7 @@ current = voltage / R (where R = 560 Ω)
   
   A minimum delay of 2× TAD is required before starting the next acquisition.
 
+
 **Display Output:**
 
 The 16×2 LCD displays the measured Current (A) and Voltage (V) in the following format:
@@ -77,6 +81,7 @@ The 16×2 LCD displays the measured Current (A) and Voltage (V) in the following
    CURRENT=0.123A
 
    VOLTAGE=5.000V
+
    
 **Project Files:**
 
@@ -85,6 +90,7 @@ The 16×2 LCD displays the measured Current (A) and Voltage (V) in the following
 2. lcd1.h — Header file for LCD interfacing functions
 
 3. config_bits.c — Microcontroller configuration bits
+
 
 **Notes:**
 
